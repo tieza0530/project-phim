@@ -1,10 +1,11 @@
 import { createBrowserRouter } from "react-router-dom";
-import { HomePage } from "./pages/homeMovie";
-import { SinglePage } from "./pages/singleMovie";
-import { SeriesPage } from "./pages/seriesMoive";
-import { WatchMovie } from "./pages/watchMoive";
-import { TvShows } from "./pages/typeMovie/tvShow";
-import { TypeMovieList } from "./pages/typeMovie";
+import { HomePage } from "./pages/home-movie";
+import { SinglePage } from "./pages/single-movie";
+import { SeriesPage } from "./pages/series-movie";
+import { TvShows } from "./pages/type-movie/tvShow";
+import { TypeMovieList } from "./pages/type-movie";
+import { WatchMovie } from "./pages/watch-movie";
+import { SearchPage } from "./pages/search-movie";
 export const routes: IRoutes = {
   root: {
     path: "/",
@@ -34,6 +35,10 @@ export const routes: IRoutes = {
       path: "/the-loai/:slug/:page",
       display: "theloai",
   },
+  searchMovie: {
+    path: "/tim-kiem/",
+    display: "searchMovie Page",
+  }
 };
 
 export const router = createBrowserRouter([
@@ -65,6 +70,10 @@ export const router = createBrowserRouter([
     path: routes.tvshowPage.path,
     element: <TvShows />,
   },
+  {
+    path: routes.searchMovie.path,
+    element: <SearchPage />,
+  },
 ]);
 
 export interface IRoute {
@@ -79,4 +88,6 @@ export type IRoutes = {
   tvshowPage: IRoute;
   watch: IRoute;
   theloai: IRoute;
+  searchMovie: IRoute;
+
 };

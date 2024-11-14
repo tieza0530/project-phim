@@ -13,7 +13,7 @@ import { useNavigate, useParams } from "react-router-dom";
 export type PaginationProps = {
   totalPage: number;
   pageRanges: number;
-  type: string;
+  type: string| undefined;
 };
 
 export function PaginationSeries({ totalPage, pageRanges, type}: PaginationProps) {

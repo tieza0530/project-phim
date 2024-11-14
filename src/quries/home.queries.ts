@@ -42,7 +42,7 @@ export const useGetWatchMovie = (slug: string) => {
   });
 };
 
-export const useGetTypeDetailMovie = (type: string, page:number) => {
+export const useGetTypeDetailMovie = (type: string , page:number) => {
   return useQuery({
     queryKey: [`watchMovieType-${type}-${page}`],
     queryFn: () => {

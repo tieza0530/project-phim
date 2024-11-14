@@ -7,7 +7,7 @@ import { useEffect } from "react";
 
 export const TypeMovieList = () => {
   const params = useParams();
-  const { data, refetch } = useGetTypeDetailMovie(params.slug, params.page);
+  const { data, refetch } = useGetTypeDetailMovie(params.slug!, Number(params.page));
   useEffect(() => {
     refetch();
   }, [data]);

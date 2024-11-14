@@ -8,7 +8,6 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 import React from "react";
-import { LazyLoadImage } from "react-lazy-load-image-component";
 import { FaPlay } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 
@@ -34,11 +33,10 @@ export const CarouselCartool = () => {
         {cartoon?.data.items.slice(0, 5).map((item) => (
           <CarouselItem key={`value-carousel-` + item._id}>
             <div className="relative aspect-video group">
-              <LazyLoadImage
+              <img
                 className="rounded-xl  aspect-video"
                 src={urlIMG + item.poster_url}
                 alt={item.slug}
-                effect="black-and-white"
               />
               <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 hidden group-hover:block cursor-pointer">
                 <FaPlay

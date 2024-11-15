@@ -16,13 +16,13 @@ export const ResultSearch = ({
   return (
     <div>
       {dataSearch?.data.items.length > 0 ? (
-        <div className="w-full">
+        <div className="w-full mt-10">
           <div className="flex justify-between items-end bg-gray-100 py-3 rounded-lg">
-            <p className="text-3xl ml-4 text-black">
+            <p className="xl:text-3xl lg:text-2xl md:text-xl ml-4 text-black">
               Danh sách {dataSearch?.data.titlePage}
             </p>
           </div>
-          <div className="grid grid-cols-6 mt-4">
+          <div className="grid xl:grid-cols-6 lg:grid-cols-5 md:grid-cols-4 sm:grid-cols-3 max-sm:grid-cols-2  mt-4">
             {dataSearch?.data.items.map((item) => (
               <div
                 className="aspect-[2/3]  relative group"
@@ -45,7 +45,7 @@ export const ResultSearch = ({
                     {item.lang}
                   </b>
                   <b className=" bg-white text-black text-[10px] p-1 rounded-sm ml-1">
-                    {item.time ? item.time: 'Đang cập nhật'}
+                    {item.time ? item.time : "Đang cập nhật"}
                   </b>
                   <Button
                     className="absolute bottom-2 left-2 bg-red-600 py-1 hover:bg-red-500"
@@ -61,7 +61,7 @@ export const ResultSearch = ({
         </div>
       ) : (
         <div>
-          <div className="flex justify-between items-end bg-gray-100 py-3 rounded-lg">
+          <div className="flex justify-between items-end bg-gray-100 py-3 rounded-lg mt-10">
             <p className="text-3xl ml-4 text-black">
               Danh sách {dataSearch?.data.titlePage}
             </p>

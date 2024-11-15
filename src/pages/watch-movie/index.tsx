@@ -16,7 +16,7 @@ export const WatchMovie = () => {
   const { data: dataType, refetch: refetchTypeDetailMovie } =
     useGetTypeDetailMovie(data?.movie.category[0].slug!, 1);
   const urlIMG = dataType?.data.APP_DOMAIN_CDN_IMAGE + "/uploads/movies/";
-  
+
   useEffect(() => {
     refetchWatchMovie();
     refetchTypeDetailMovie();
@@ -28,7 +28,7 @@ export const WatchMovie = () => {
     setEpisode(slug);
     navigator(`/xem-phim/${data?.movie.slug}/tap-${slug}`);
   };
-  
+
   return (
     <MainLayout>
       {isWatchingMovie ? (
@@ -54,7 +54,9 @@ export const WatchMovie = () => {
         isWatching={!isWatchingMovie}
         isEpisode={episode}
       />
-      <RelatedMovies dataType={dataType} urlImg={urlIMG} />
+      <div className="mt-20">
+        <RelatedMovies dataType={dataType} urlImg={urlIMG} />
+      </div>
     </MainLayout>
   );
 };

@@ -10,10 +10,13 @@ export type DetailMovieProps = {
 };
 
 export const DetailMovie = ({ data, handleWatchMovie }: DetailMovieProps) => {
-  const [isPlayDisabled , setIsPlayDisabled ] = useState(false);
+  const [isPlayDisabled, setIsPlayDisabled] = useState(false);
 
   useEffect(() => {
-    if (data?.movie.episode_current === "Tập 0" || data?.movie.episode_current === "Trailer" ) {
+    if (
+      data?.movie.episode_current === "Tập 0" ||
+      data?.movie.episode_current === "Trailer"
+    ) {
       setIsPlayDisabled(true);
     } else {
       setIsPlayDisabled(false);
@@ -21,21 +24,25 @@ export const DetailMovie = ({ data, handleWatchMovie }: DetailMovieProps) => {
   }, [setIsPlayDisabled, data]);
 
   return (
-    <div className="flex mt-20 mr-32 items-center ">
-      <div className="ml-16">
+    <div className="grid md:grid-cols-3 sm:flex max-sm:flex  items-center ">
+      <div className=" ">
         <LazyLoadImage
           key={data?.movie.thumb_url}
-          className="w-60 h-96 object-cover rounded-xl"
+          className="object-cover rounded-xl md:col-span-1 sm:h-72 max-sm:h-52 max-sm:w-48 "
           src={data?.movie.thumb_url}
           alt={data?.movie.slug}
           effect="black-and-white"
         />
       </div>
-      <div className="ml-10 w-[calc(100%-15rem)] text-sm">
-        <b className="text-4xl">{data?.movie.name}</b>
-        <p className="text-lg">{data?.movie.origin_name}</p>
-        <div className="flex text-sm my-2">
-          <p className="mr-2 flex items-center">
+      <div className="max-sm:ml-5 ml-10 md:col-span-2 text-sm">
+        <b className="xl:text-4xl lg:text-3xl md:text-2xl sm:text-xl ">
+          {data?.movie.name}
+        </b>
+        <p className="xl:text-lg lg:text-[16px] md:text-[14px] sm:text-[12px] lg:text-sm">
+          {data?.movie.origin_name}
+        </p>
+        <div className="flex text-sm md:text-xs sm:text-[10px] lg:text-sm xl:text-lg my-2">
+          <p className="mr-2 flex items-center ">
             <CalendarIcon className="mr-1" />
             {data?.movie.year}
           </p>
@@ -44,22 +51,33 @@ export const DetailMovie = ({ data, handleWatchMovie }: DetailMovieProps) => {
             {data?.movie.time}
           </p>
         </div>
-        <p className="mb-2">Đang phát: {data?.movie.episode_current}</p>
+        <p className="mb-2 md:text-xs sm:text-[10px] lg:text-sm">
+          Đang phát: {data?.movie.episode_current}
+        </p>
         {data?.movie.country.map((item, idx) => (
-          <p className="mb-2" key={`country-${idx}`}>
+          <p
+            className="mb-2 md:text-xs sm:text-[10px] lg:text-sm"
+            key={`country-${idx}`}
+          >
             Quốc gia: {item.name}
           </p>
         ))}
-        <span>Thể loại: </span>
+        <span className="md:text-xs sm:text-[10px] lg:text-sm">Thể loại: </span>
         {data?.movie.category.map((item, idx) => (
-          <b key={`type-movie-${idx}`}>
+          <b
+            key={`type-movie-${idx}`}
+            className="md:text-xs sm:text-[10px] lg:text-sm"
+          >
             {item.name}
             {idx !== data.movie.category.length - 1 ? ",  " : "."}
           </b>
         ))}
         <p className="mt-2">Diễn viên: </p>
         {data?.movie.actor.map((item, idx) => (
-          <b key={`actor-${idx}`}>
+          <b
+            key={`actor-${idx}`}
+            className="md:text-xs sm:text-[10px] lg:text-sm"
+          >
             {item}
             {idx !== data.movie.actor.length - 1 ? ",  " : "."}
           </b>

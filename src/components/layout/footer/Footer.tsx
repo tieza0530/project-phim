@@ -1,6 +1,6 @@
 export const Footer = () => {
   return (
-    <div className="text-center p-28 mx-10">
+    <div className="text-center p-28 mx-10 max-sm:mx-0 max-sm:p-8 max-sm:text-xs sm:p-8 sm:text-sm">
       <p className="text-gray-500">
         PHIM365 gửi lời cảm ơn tới bạn đã ghé thăm trang web của chúng tôi!
         Chúng tôi hy vọng bạn đã có những giây phút giải trí thú vị với kho phim

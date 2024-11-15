@@ -1,7 +1,6 @@
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
-import { Button } from "@/components/ui/button";
 import {
   Form,
   FormControl,
@@ -11,9 +10,7 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { useEffect, useState } from "react";
-import { SearchPage } from "@/pages/search-movie";
 import { useNavigate } from "react-router-dom";
-import { routes } from "@/router";
 
 export const InputSearch = () => {
   const [keySearch, setKeySearch] = useState("");
@@ -34,12 +31,12 @@ export const InputSearch = () => {
     }
   };
   useEffect(() => {
-    if(keySearch){
-        navigator(`/tim-kiem/${keySearch}`)
+    if (keySearch) {
+      navigator(`/tim-kiem/${keySearch}`);
     }
-  }, [keySearch])
+  }, [keySearch]);
   return (
-    <div>
+    <div className="ml-1">
       <Form {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)} className="flex">
           <FormField
@@ -48,7 +45,11 @@ export const InputSearch = () => {
             render={({ field }) => (
               <FormItem>
                 <FormControl>
-                  <Input placeholder="Tìm kiếm phim" {...field}  className="bg-white font-normal pr-20"/>
+                  <Input
+                    placeholder="Tìm kiếm phim"
+                    {...field}
+                    className="bg-white font-normal lg:pr-20 md:pr-10 sm:mr-5 max-sm:mr-5 text-xs min-w-36 sm:py-0 "
+                  />
                 </FormControl>
                 <FormMessage />
               </FormItem>

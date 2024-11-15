@@ -29,7 +29,7 @@ export const EpisodeMovie = ({
               !isWatching && "bg-black  text-white"
             )}
             onClick={() => handleWatchMovie(String(idx + 1))}
-            key={`episodes-${result.slug}`}
+            key={`episodes-${result.slug}-${result.name}`}
             disabled={
               data.movie.episode_current === "Tập 0" ||
               data.movie.episode_current === "Full" ||

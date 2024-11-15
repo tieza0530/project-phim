@@ -36,7 +36,7 @@ export const routes: IRoutes = {
       display: "theloai",
   },
   searchMovie: {
-    path: "/tim-kiem/",
+    path: "/tim-kiem/:key",
     display: "searchMovie Page",
   }
 };

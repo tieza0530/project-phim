@@ -2,7 +2,7 @@ import { MainLayout } from "@/components/layout/MainLayout";
 import { useGetTypeDetailMovie } from "@/quries/home.queries";
 import { useNavigate, useParams } from "react-router-dom";
 import { TypeMovie } from "../components/TypeMovie";
-import { PaginationSeries } from "../components/PaginationSeries";
+import { PaginationMovie } from "../components/PaginationMovie";
 import { useEffect } from "react";
 
 export const TypeMovieList = () => {
@@ -25,7 +25,7 @@ export const TypeMovieList = () => {
     <div>
       <MainLayout>
         <TypeMovie data={data} handleNextPageWatch={handleNextPageWatch} />
-        <PaginationSeries
+        <PaginationMovie
           totalPage={totalPage}
           pageRanges={data?.data.params.pagination.pageRanges!}
           type={`the-loai/${data?.data.type_list}`}

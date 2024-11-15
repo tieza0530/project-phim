@@ -2,7 +2,7 @@ import { MainLayout } from "@/components/layout/MainLayout";
 import { TypeMovie } from "../components/TypeMovie";
 import { useGetSeriesMovie } from "@/quries/single.queries";
 import { useNavigate, useParams } from "react-router-dom";
-import { PaginationSeries } from "../components/PaginationSeries";
+import { PaginationMovie } from "../components/PaginationMovie";
 import { useEffect } from "react";
 
 export const SeriesPage = () => {
@@ -29,7 +29,7 @@ export const SeriesPage = () => {
           data={seriesMovie}
           handleNextPageWatch={handleNextPageWatch}
         />
-        <PaginationSeries
+        <PaginationMovie
           totalPage={totalPage}
           pageRanges={seriesMovie?.data.params.pagination.pageRanges!}
           type={seriesMovie?.data.type_list}

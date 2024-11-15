@@ -10,9 +10,9 @@ export type MainLayoutProps = {
 export const MainLayout = ({ children }: MainLayoutProps) => {
   return (
     <Suspense fallback={<Loading />}>
-    <div className="bg-neutral-700">
+    <div  className="bg-neutral-700">
       <Header />
-      <div className="flex text-white justify-between mt-5 xl:mx-28">
+      <div className="flex text-white justify-between mt-5 mx-28">
         <main className="mx-10 w-full">{children} </main>
         <ListMovieTop />
       </div>

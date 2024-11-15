@@ -2,7 +2,7 @@ import { MainLayout } from "@/components/layout/MainLayout";
 import { useGetSingleMovie } from "@/quries/single.queries";
 import { useNavigate, useParams } from "react-router-dom";
 import { TypeMovie } from "../components/TypeMovie";
-import { PaginationSeries } from "../components/PaginationSeries";
+import { PaginationMovie } from "../components/PaginationMovie";
 import { useEffect } from "react";
 
 export const SinglePage = () => {
@@ -28,7 +28,7 @@ export const SinglePage = () => {
           data={singleMovie}
           handleNextPageWatch={handleNextPageWatch}
         />
-        <PaginationSeries
+        <PaginationMovie
           totalPage={totalPage}
           pageRanges={singleMovie?.data.params.pagination.pageRanges!}
           type={singleMovie?.data.type_list}

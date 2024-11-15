@@ -16,7 +16,7 @@ export type PaginationProps = {
   type: string| undefined;
 };
 
-export function PaginationSeries({ totalPage, pageRanges, type}: PaginationProps) {
+export function PaginationMovie({ totalPage, pageRanges, type}: PaginationProps) {
 
   const [currentPage, setCurrentPage] = useState(1);
   const params = useParams();

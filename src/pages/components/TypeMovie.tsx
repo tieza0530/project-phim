@@ -10,7 +10,7 @@ export type TypeMovieProps = {
 export function TypeMovie({data , handleNextPageWatch} : TypeMovieProps) {
   const urlImg = data?.data.APP_DOMAIN_CDN_IMAGE + "/uploads/movies/";
   return (
-    <div className="mt-20 w-full">
+    <div className="w-full">
       <div className="flex justify-between items-end bg-gray-100 py-3 rounded-lg">
         <p className="text-3xl ml-4 text-black">
           Danh sách {data?.data.titlePage}

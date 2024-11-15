@@ -6,7 +6,7 @@ import { ResultSearch } from "./ResultSearch";
 export const SearchPage = () => {
   const params = useParams();
   const navigator = useNavigate();
-  const { data: dataSearch } = useGetSearch(params.key);
+  const { data: dataSearch } = useGetSearch(params.key!);
   const handleNextPageWatch = (slug: string) => {
     navigator(`/xem-phim/${slug}`);
   };
@@ -14,7 +14,7 @@ export const SearchPage = () => {
   return (
     <MainLayout>
       <ResultSearch
-        dataSearch={dataSearch}
+        dataSearch={dataSearch!}
         handleNextPageWatch={handleNextPageWatch}
       />
     </MainLayout>

@@ -2,7 +2,6 @@ import { Button } from "@/components/ui/button";
 import { RootItem } from "@/type/itemMovie";
 import { CalendarIcon, ClockIcon, PlayIcon } from "@radix-ui/react-icons";
 import { useEffect, useState } from "react";
-import { LazyLoadImage } from "react-lazy-load-image-component";
 
 export type DetailMovieProps = {
   data: RootItem | undefined;

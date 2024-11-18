@@ -1,4 +1,4 @@
-import { useGetCartoon, useGetTVShows } from "@/quries/home.queries";
+import { useGetCartoon } from "@/quries/home.queries";
 import Autoplay from "embla-carousel-autoplay";
 import {
   Carousel,

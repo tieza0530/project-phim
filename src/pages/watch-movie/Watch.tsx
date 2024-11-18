@@ -88,7 +88,6 @@ export const Watch = ({
                 <iframe
                   src={result.link_embed}
                   width={"100%"}
-                  allowFullScreen
                   allow="autoplay"
                   className="aspect-video"
                   key={`episodesMovie-${result.slug}-${result.name}`}

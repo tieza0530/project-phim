@@ -1,4 +1,4 @@
-import { useGetTVShows } from "@/quries/home.queries";
+import { useGetCartoon, useGetTVShows } from "@/quries/home.queries";
 import Autoplay from "embla-carousel-autoplay";
 import {
   Carousel,
@@ -12,7 +12,7 @@ import { FaPlay } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 
 export const CarouselCartool = () => {
-  const { data: cartoon } = useGetTVShows();
+  const { data: cartoon } = useGetCartoon();
   const urlIMG = cartoon?.data.APP_DOMAIN_CDN_IMAGE + "/uploads/movies/";
   const navigator = useNavigate();
   const plugin = React.useRef(
@@ -34,9 +34,10 @@ export const CarouselCartool = () => {
           <CarouselItem key={`value-carousel-` + item._id}>
             <div className="relative aspect-video group">
               <img
-                className="rounded-xl  aspect-video"
+                className="rounded-xl w-full h-full object-cover aspect-video"
                 src={urlIMG + item.poster_url}
                 alt={item.slug}
+                
               />
               <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 hidden group-hover:block cursor-pointer">
                 <FaPlay

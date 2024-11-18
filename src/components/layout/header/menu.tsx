@@ -7,8 +7,13 @@ import {
   NavigationMenuTrigger,
 } from "@radix-ui/react-navigation-menu";
 import { useNavigate } from "react-router-dom";
-import { RowsIcon } from "@radix-ui/react-icons";
-import { InputSearch } from "./InputSearch";
+import { MagnifyingGlassIcon, RowsIcon } from "@radix-ui/react-icons";
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from "@radix-ui/react-popover";
+
 import {
   Sheet,
   SheetContent,
@@ -17,6 +22,7 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
+import { InputSearch } from "./InputSearch";
 
 interface MenuProps {
   data: GenreResponse | undefined;
@@ -71,18 +77,20 @@ export const Menu = ({ data }: MenuProps) => {
           </NavigationMenuList>
         </NavigationMenu>
       </div>
-      <div className="max-sm:block hidden">
+      <div className="mr-2 max-sm:block hidden ">
+        <Popover>
+          <PopoverTrigger><MagnifyingGlassIcon /></PopoverTrigger>
+          <PopoverContent className="text-black mt-2 mr-2"><InputSearch/></PopoverContent>
+        </Popover>
+      </div>
+      <div className="max-sm:block hidden flex">
         <Sheet>
           <SheetTrigger>
             <RowsIcon />
           </SheetTrigger>
           <SheetContent className="w-full bg-white/70 cursor-pointer ">
             <SheetHeader>
-              <div className="flex justify-center items-center mt-10">
-                <b>Tìm kiếm: </b>
-                <InputSearch />
-              </div>
-              <SheetTitle className="text-lg pt-5 pl-5">Menu</SheetTitle>
+              <SheetTitle className="text-lg pt-5 pl-5 mt-10">Menu</SheetTitle>
               <b className="hover:bg-white/30 pl-5" onClick={handlePageHome}>
                 Trang chủ
               </b>

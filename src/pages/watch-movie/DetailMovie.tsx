@@ -24,17 +24,16 @@ export const DetailMovie = ({ data, handleWatchMovie }: DetailMovieProps) => {
   }, [setIsPlayDisabled, data]);
 
   return (
-    <div className="grid md:grid-cols-3 sm:flex max-sm:flex  items-center ">
-      <div className=" ">
-        <LazyLoadImage
+    <div className="items-center grid grid-cols-3 ">
+      <div className="col-span-1 w-full flex justify-center	 items-center	">
+        <img
           key={data?.movie.thumb_url}
-          className="object-cover rounded-xl md:col-span-1 sm:h-72 max-sm:h-52 max-sm:w-48 "
+          className="object-cover max-sm:min-w-[120px] sm:w-[120px] md:w-[140px] lg:w-[160px] xl:w-[180px]  h-auto  rounded-md"
           src={data?.movie.thumb_url}
           alt={data?.movie.slug}
-          effect="black-and-white"
         />
       </div>
-      <div className="max-sm:ml-5 ml-10 md:col-span-2 text-sm">
+      <div className="max-sm:ml-5 col-span-2 text-sm">
         <b className="xl:text-4xl lg:text-3xl md:text-2xl sm:text-xl ">
           {data?.movie.name}
         </b>
